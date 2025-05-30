@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "author": "Edwin Sanchez",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": -48,
+      "left": 129.64,
+      "attrs": { "env": "micropython-20231227-v1.22.0" }
+    },
+    { "type": "wokwi-pir-motion-sensor", "id": "pir1", "top": -44, "left": -132.18, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:3V3", "pir1:VCC", "red", [ "h-76.65", "v105.6", "h-163.2" ] ],
+    [ "pir1:GND", "esp:GND.2", "black", [ "v0" ] ],
+    [ "pir1:OUT", "esp:15", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
